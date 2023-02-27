@@ -16,6 +16,7 @@
   لاگین کند
 
   <span style = "color:red;">درحال حاضر احتمال وجود داشتن باگ ادمین از سمت پنل مدیریت وجود دارد برای همین پیشنهاد میشود تمامی دیتاهارو به صورت داینامیک از طریق فایل json مورد نظر خودتان وارد کنید</span>
-
-  <img src="https://www.drupal.org/files/project-images/zarinpal.png" width="350" title="hover text">
+  <p>
+  <img align="center" src="https://www.drupal.org/files/project-images/zarinpal.png" width="150" title="hover text">
+  </p>
 </p>
