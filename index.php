@@ -4,6 +4,8 @@
 
   $obj = new payment(getInfo("username"), getInfo("password"), getInfo("min"), getInfo('zarinpal'));
 
+    
+  
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +20,7 @@
 </head>
 <body>
     <div class="container flex-row center">
+      <?php   if ($obj->checkZarinPal() == true){?>
       <div class="payment-container flex-col center">
         <h1>درگاه پرداخت همراز مشاور</h1>
         <div class="input-box flex-row center wrap" >
@@ -52,6 +55,8 @@
         </div>
         <button>پرداخت</button>
       </div>
+
+      <?php }?>
     </div>
 </body>
 </html>
