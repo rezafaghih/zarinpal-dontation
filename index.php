@@ -1,3 +1,11 @@
+<?php 
+  include_once "src/php/account.php";
+  include_once "src/php/info.php";
+
+  $obj = new payment(getInfo("username"), getInfo("password"), getInfo("min"), getInfo('zarinpal'));
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +19,7 @@
 <body>
     <div class="container flex-row center">
       <div class="payment-container flex-col center">
-        <h1>درگاه پرداخت</h1>
+        <h1>درگاه پرداخت همراز مشاور</h1>
         <div class="input-box flex-row center wrap" >
           <label for="">
             نام حامی
