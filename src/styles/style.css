@@ -23,3 +23,75 @@
   padding: 5px 20px;
   margin-top: 30px;
 }
+
+#finish-payment-container{
+  position: relative;
+  width: 250px;
+  height: max-content;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 9px;
+}
+
+
+#finish-payment-container>h1{
+  font-size: 24px;
+  font-weight: 1000;
+}
+
+
+#finish-payment-container>p{
+  position: relative;
+  width: 100%;
+  height: max-content;
+  justify-content: space-around;
+}
+
+
+
+#finish-payment-container>p>span{
+  width: 25%;
+  font-size: 15px;
+  color:rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  font-weight: 100;
+
+}
+
+#finish-payment-container>p>span:nth-child(2){
+  height: 3px;
+  width: 50%;
+  transform: translateY(1px);
+  border-top: 2px dashed black;
+}
+
+
+
+#finish-payment-container>p>span:nth-child(2) svg{
+  width: 50px;
+  transform: translateY(-3px);
+  color:red;
+}
+
+
+
+#finish-payment-container>a{
+  color:white;
+  text-decoration: none;
+  background-color: rgb(4, 85, 122);
+  font-size: 15px;
+  padding: 5px 20px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  gap: 10px;
+}
+
+
+#finish-payment-container>a svg{
+  width: 20px;
+}

@@ -22,7 +22,9 @@ class payment {
   function get_username(){
    return $this->admin_username ;
   }
-
+  function get_min(){
+    return $this->min_amount ;
+   }
   function checkZarinPal(){
     if ($this->zarinpal == "" or empty($this->zarinpal)){
       return false;
