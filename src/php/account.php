@@ -25,6 +25,7 @@ class payment {
   function get_min(){
     return $this->min_amount ;
    }
+
   function checkZarinPal(){
     if ($this->zarinpal == "" or empty($this->zarinpal)){
       return false;
@@ -32,4 +33,9 @@ class payment {
       return true;
     }
   }
+  function get_zarinpal(){
+    if ($this->checkZarinPal() == true){
+      return $this->zarinpal; 
+    }
+   }
 }

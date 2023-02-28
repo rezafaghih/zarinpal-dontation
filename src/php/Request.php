@@ -15,20 +15,53 @@
   $price= htmlspecialchars($_POST['input-price']);
   $name= htmlspecialchars($_POST['input-name']);
   $des= htmlspecialchars($_POST['input-des']);
+  $email= htmlspecialchars($_POST['input-email']);
 
+  function checkVar($var){
+    if (empty($var) or $var == ""){
+        return false;
+    }else{
+        return true;
+    }
+  }
+  if (checkVar($price) == false or checkVar($name)){
+    header("Location: ../v=inf");
+    exit;
+  }
+
+  if (checkVar($des)){
+    $des_output = "";
+  }else{
+    $des_output = $des." توضیحات : ";
+  }
+  
+  if (checkVar($email)){
+    $mail_output = "NO EMAIL INSERTED";
+  }else{
+    $mail_output = $email;
+  }
   
 
   $obj = new payment(getInfo("username"), getInfo("password"), getInfo("min"), getInfo('zarinpal'));
 
-
+  $format_des = "
+    $name تراکنش توسط  
+    
+    $des_output
+  ";
   if ($obj->get_min() < $price){
-
+    header("Location: ../v=lowPrice");
+    exit;
   }
-  $data = array("merchant_id" => "984b85a8-c228-11e8-af87-005056a205be",
+  if ($obj->checkZarinPal() == false){
+    header("Location: ../");
+    exit;
+  }
+  $data = array("merchant_id" => $obj->get_zarinpal(),
       "amount" => $price,
-      "callback_url" => "https://".$_SERVER['SERVER_NAME']."/parscode.xyz/finish-payment",
+      "callback_url" => "https://".$_SERVER['SERVER_NAME']."/paymen-generator",
       "description" => $format_des,
-      "metadata" => [ "email" => $accountInfo['email'],"mobile"=>$accountInfo['phone']],
+      "metadata" => [ "email" => $mail_output,"mobile"=>"0912345678"],
       );
   $jsonData = json_encode($data);
   $ch = curl_init('https://api.zarinpal.com/pg/v4/payment/request.json');
