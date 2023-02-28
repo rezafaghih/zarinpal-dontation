@@ -3,11 +3,7 @@ if(!isset($_SESSION)){
     session_start();
   }
 
-if (!isset($_SESSION['zp:check'])){
-  echo 'you dont have a accsess to use this page';
-}
-
-
+  
 
 $Authority = $_GET['Authority'];
 $status = $_GET['Status'];

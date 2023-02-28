@@ -1,34 +1,50 @@
 <?php
+  if (!isset($_POST['submit-donate'])){
+    header("Location: ../../");
+    exit;
+  }
 
   if(!isset($_SESSION)){
     session_start();
   }
 
+    // include php files  
   include_once "./info.php";
   include_once "./account.php";
 
-  if (!isset($_POST['submit-donate'])){
-    header("Location: ../");
-    exit;
-  }
+
+  //   insert all variable and objects
+  $obj = new payment(getInfo("username"), getInfo("password"), getInfo("min"), getInfo('zarinpal'));
 
   $price= htmlspecialchars($_POST['input-price']);
   $name= htmlspecialchars($_POST['input-name']);
   $des= htmlspecialchars($_POST['input-des']);
   $email= htmlspecialchars($_POST['input-email']);
 
+
+    // this function will check var and return false if variable is empty   
   function checkVar($var){
-    if (empty($var) or $var == ""){
+    if ($var == "" or empty($var)){
         return false;
     }else{
         return true;
     }
   }
-  if (checkVar($price) == false or checkVar($name)){
-    header("Location: ../v=inf");
-    exit;
+  // this function can check price and makesure if price is not number or lower than min price
+  function checkPrice($num){
+    global $obj;
+    if (preg_match("/^[0-9]+$/", $num) or $obj->get_min() > $num){
+        return true;
+    }else{
+        return false;
+    }
   }
 
+  // start checking all variables
+  if (checkVar($price) == false or checkVar($name) == false){
+        header("Location: ../../?v=inf");
+    exit;
+  }
   if (checkVar($des)){
     $des_output = "";
   }else{
@@ -41,25 +57,33 @@
     $mail_output = $email;
   }
   
+  if (checkPrice($price) == false){
+    header("Location: ../../?v=price");
+    exit;
+  }
 
-  $obj = new payment(getInfo("username"), getInfo("password"), getInfo("min"), getInfo('zarinpal'));
+  if ($obj->checkZarinPal() == false){
+    header("Location: ../../");
+    exit;
+  }
+//   finish checking process
 
+
+//   create description output format with name and text
   $format_des = "
     $name تراکنش توسط  
-    
+
     $des_output
   ";
-  if ($obj->get_min() < $price){
-    header("Location: ../v=lowPrice");
-    exit;
-  }
-  if ($obj->checkZarinPal() == false){
-    header("Location: ../");
-    exit;
-  }
+  
+  $obj->set_tempInformation([$name, $format_des, $price, $email]);
+  $price = $price."0";
+
+
+    // send shaparak data from zarinpal api   
   $data = array("merchant_id" => $obj->get_zarinpal(),
       "amount" => $price,
-      "callback_url" => "https://".$_SERVER['SERVER_NAME']."/paymen-generator",
+      "callback_url" => "https://".$_SERVER['SERVER_NAME']."/paymen-generator/callback",
       "description" => $format_des,
       "metadata" => [ "email" => $mail_output,"mobile"=>"0912345678"],
       );
