@@ -137,6 +137,52 @@
   top: 5%;
 }
 
+.right-side-container>span, .last-payment-container>span{
+  width: 100%;
+  font-size: 24px;
+  color: var(--text);
+}
+
+.dashbord-box{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(245, 177, 177, 0.329);
+}
+
+.last-peyment{
+  position: relative;
+  width: 100%;
+  
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+.last-peyment span{
+  font-size: 14px;
+}
+
+.dashbord-box svg{
+  position: absolute;
+  left: -30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;border: 10px solid rgb(214, 213, 213);
+  color:white;
+  background-color: cadetblue;
+  padding: 10px;
+}
+
+.last-payment-container{
+  position: relative;
+  width: 70%;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+}
+
 .left-side-bar nav{
   width: 80%;
   margin-top: 30px;

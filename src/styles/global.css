@@ -1,3 +1,7 @@
+:root{
+  --text: rgb(20, 20, 88);
+}
+
 body{
   background-color: rgb(214, 213, 213);
 }
