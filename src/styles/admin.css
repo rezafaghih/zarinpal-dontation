@@ -1,125 +1,3 @@
-<<<<<<< HEAD
-:root{
-    --bg:#0D1117;
-    --text: white;
-  }
-
-.navbar-contaienr{
-    position: fixed;
-    width:20%;
-    height: 95vh;
-    left: 10px;
-    top: 2.5vh;
-    border-radius: 10px;
-    background-color: var(--bg);
-  }
-  .navbar-contaienr .top-side-image{
-    position: relative;
-    width: 100%;
-    min-height: max-content;
-    margin-top: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.212);
-    padding-bottom: 10px;
-  }
-  .navbar-buttons{
-    position: relative;
-    width: 100%;
-    height: max-content;
-    margin-top: 30px;
-    gap: 20px;
-    padding-bottom: 30px;
-  }
-  .navbar-buttons button{
-    width: 80%;
-    height: 45px;
-    background-color: #000000;
-    color:white;
-    font-family: font;
-    padding: 25px 0px;
-    border: none;
-    border-radius: 30px;
-    transition: 500ms;
-    cursor: pointer;
-  }
-  .navbar-buttons button svg{
-    width: 30px;
-    position: absolute;
-    left: 50px;
-    height: 30px;
-    padding: 5px;
-    color:rgb(56, 55, 55);
-    background-color: white;
-    border-radius: 100%;
-    transition: 500ms;
-  }
-  
-  .navbar-buttons button[act]{
-    background-color: rgb(230, 230, 230);
-    color:black;
-    width: 90%;
-  }
-  .navbar-buttons button[act] svg{
-    background-color: #292828;
-    color:white;
-  }
-  
-  .navbar-contaienr .top-side-image>img{
-    width: 100px;
-    height:100px;
-    border-radius: 100%;
-    object-fit: cover;
-  }
-  
-  
-  .navbar-contaienr .top-side-image>span{
-    font-family: font;
-    color:white;
-  }
-
-  #real-box-container{
-    position: relative;
-    width: 78%;
-    left: 22%;
-    height: 90%;
-    top: 5%;
-    place-items: start;
-    overflow-y: scroll;
-  }
-
-  .dashboard-box{
-    position: relative;
-    width: 300px;
-    height:200px;
-    background-color: #0D1117;
-    border-radius: 10px;
-    gap: 20px;
-  }
-  .dashboard-box svg{
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    background-color: whitesmoke;
-    color:#0D1117;border-radius: 100%;
-  } 
-
-  .dashboard-box span{
-    color:aliceblue;
-    font-weight: 100;
-    font-size: 16px;
-  }
-  
-  .dashboard-box p{
-    color:rgb(181, 181, 182);
-    font-weight: 100;
-    font-size: 13px;
-  }
-  #real-box-container>span{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    place-items: center;
-  }
-=======
 .left-side-bar{
   position: relative;
   left: 15px;
@@ -135,6 +13,7 @@
   width: 75%;
   height: 90%;
   top: 5%;
+  overflow-y: scroll;
 }
 
 .right-side-container>span, .last-payment-container>span{
@@ -216,4 +95,22 @@
 .left-side-bar nav button svg{
   width: 30px;
 }
->>>>>>> a27eef6fbb49e4c17752cc70a7e3d1b4078332b9
+
+.lastpayment-box{
+  position: relative;
+  width: 80%;
+  background-color: white;
+  height: 45px;
+  border-radius: 8px;
+  justify-content: space-around;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.384);
+}
+
+
+.lastpayment-box button{
+  color:white;
+  border: none;
+  border-radius: 6px;
+  padding: 3px 10px;
+  background-color: rgb(66, 160, 236);
+}
