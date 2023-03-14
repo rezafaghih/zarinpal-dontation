@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container flex-row">
-      <div class="right-side-container flex-row center wrap" style="place-items: start; gap:20px; display: none;">
+      <div class="right-side-container flex-row center wrap" style="place-items: start; gap:20px; display: flex;">
         <span class="flex-row center">داشبورد</span>
         <div class="dashbord-box flex-col center" style="justify-content: space-around;">
           <span style="color:var(--text); font-size: 24px;">پرداخت های ماه</span>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div class="right-side-container flex-col center" style="place-items: start; place-items: center; gap:30px;">
+      <div class="right-side-container flex-col center" style="place-items: start; place-items: center; gap:30px; display:none;">
         <span class="flex-row center">پرداخت ها</span>
         <div class="lastpayment-box flex-row center">
           <button>اطلاعات کامل</button>
@@ -125,7 +125,20 @@
         </div>
         
       </div>
-      
+      <div class="right-side-container flex-col center" style="place-items: start; place-items: center; gap:30px; display:none;">
+        <span class="flex-row center">شخصی سازی</span>
+        <div class="input-boxed-container flex-row wrap">
+          <input type="text" name="" id="" placeholder="نام درگاه یا مالک" style="--width: 45%;">
+          <input type="text" name="" id="" placeholder="متن هدر درگاه" style="--width: 45%;">
+          <div id="image-area" >
+            <input type="file" name="" hidden id="bg-image">
+            <label for="bg-image" class = "flex-row center">
+              عکس پس زمینه
+            </label>
+          </div>
+        </div>
+
+      </div>
       <div class="left-side-bar flex-col center" style="justify-content: start;">
         <span style="margin-top:10px;">پنل مدیریت درگاه پرداخت </span>
         <nav class = "flex-col" style="gap:20px;">

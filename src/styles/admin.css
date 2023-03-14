@@ -7,7 +7,6 @@
   width: 20%;
   background-color: white;
 }
-
 .right-side-container{
   position: relative;
   width: 75%;
@@ -15,34 +14,29 @@
   top: 5%;
   overflow-y: scroll;
 }
-
 .right-side-container>span, .last-payment-container>span{
   width: 100%;
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: bolder;
   color: var(--text);
 }
-
 .dashbord-box{
   position: relative;
   width: 300px;
   height: 200px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(245, 177, 177, 0.329);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.329);
 }
-
 .last-peyment{
   position: relative;
   width: 100%;
-  
   direction: rtl;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
-
 .last-peyment span{
   font-size: 14px;
 }
-
 .dashbord-box svg{
   position: absolute;
   left: -30px;
@@ -81,17 +75,13 @@
   gap: 6px;
   color:rgb(70, 70, 70);
   transition: 500ms;
-  /* color:var(--text); */
 }
-
 .left-side-bar nav button[act]{
   transform: translateX(-80px);
   background-color: rgb(66, 160, 236);
   color:white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.479);
 }
-
-
 .left-side-bar nav button svg{
   width: 30px;
 }
@@ -100,17 +90,56 @@
   position: relative;
   width: 80%;
   background-color: white;
-  height: 45px;
+  height: 55px;
   border-radius: 8px;
   justify-content: space-around;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.384);
 }
-
-
+.lastpayment-box span{
+  color:rgb(71, 71, 71);
+}
 .lastpayment-box button{
   color:white;
   border: none;
   border-radius: 6px;
-  padding: 3px 10px;
+  padding: 3px 20px;
   background-color: rgb(66, 160, 236);
+}
+
+.input-boxed-container{
+  position: relative;
+  width: 60%;
+  height: max-content;
+  gap: 5px;
+}
+
+.input-boxed-container>input{
+  position: relative;
+  width: var(--width);
+  height: 40px;
+  text-align: right;
+  padding: 0px 10px;
+  border-radius: 6px;
+  font-family: font;
+  font-weight: lighter;
+  color:black;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.493);
+}
+#image-area
+{
+  position: relative;
+  width: 40%;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.336);
+  border-radius: 10px;
+  /* margin-top: 10px; */
+}
+#image-area label{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
